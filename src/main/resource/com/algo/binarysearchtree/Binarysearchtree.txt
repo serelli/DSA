@@ -1,0 +1,45 @@
+
+
+Binary Search Tree is a node-based binary tree data structure which has the following properties:
+
+1) The left subtree of a node contains only nodes with keys lesser than the node’s key.
+2) The right subtree of a node contains only nodes with keys greater than the node’s key.
+3) The left and right subtree each must also be a binary search tree.
+
+Advantages of BST over Hash Table
+Hash Table supports following operations in Θ(1) time.
+1) Search                                             ``
+2) Insert
+3) Delete
+
+The time complexity of above operations in a self-balancing Binary Search Tree (BST) (like Red-Black Tree, AVL Tree, Splay Tree, etc) is O(Logn).
+So Hash Table seems to beating BST in all common operations. When should we prefer BST over Hash Tables, what are advantages. Following are some important points in favor of BSTs.
+
+We can get all keys in sorted order by just doing Inorder Traversal of BST. This is not a natural operation in Hash Tables and requires extra efforts.
+Doing order statistics, finding closest lower and greater elements, doing range queries are easy to do with BSTs. Like sorting, these operations are not a natural operation with Hash Tables.
+BSTs are easy to implement compared to hashing, we can easily implement our own customized BST. To implement Hashing, we generally rely on libraries provided by programming languages.
+With Self-Balancing BSTs, all operations are guaranteed to work in O(Logn) time. But with Hashing, Θ(1) is average time and some particular operations may be costly, especially when table resizing happens.
+
+
+
+A self-balancing binary search tree or height-balanced binary search tree is a binary search tree (BST) that
+ attempts to keep its height, or the number of levels of nodes beneath the root, as small as possible at all
+ times, automatically.
+
+ Self-Balancing Binary Search Trees are height-balanced binary search trees that automatically keeps height as small as possible when insertion and deletion operations are performed on tree. The height is typically maintained in order of Log n so that all operations take O(Log n) time on average.
+
+ Examples :
+
+ AVL Tree
+ Red Black Tree
+
+How do Self-Balancing-Tree maintain height?
+A typical operation done by trees is rotation. Following are two basic operations that can be performed to
+re-balance a BST without violating the BST property (keys(left) < key(root) < keys(right)). 1) Left Rotation
+2) Right Rotation
+
+
+AVL tree is a self-balancing Binary Search Tree (BST) where the difference between heights of left and right subtrees cannot be more than one for all nodes.
+
+Why AVL Trees?
+Most of the BST operations (e.g., search, max, min, insert, delete.. etc) take O(h) time where h is the height of the BST. The cost of these operations may become O(n) for a skewed Binary tree. If we make sure that height of the tree remains O(Logn) after every insertion and deletion, then we can guarantee an upper bound of O(Logn) for all these operations. The height of an AVL tree is always O(Logn) where n is the number of nodes in the tree.
