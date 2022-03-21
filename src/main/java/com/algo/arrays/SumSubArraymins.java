@@ -1,5 +1,6 @@
 package com.algo.arrays;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 
@@ -8,7 +9,7 @@ class SumSubArraymins {
 
     public static void main(String[] args){
         SumSubArraymins obj = new SumSubArraymins();
-        System.out.println(obj.sumSubarrayMins(new int[]{3,1,2,4}));
+        System.out.println(obj.longestConsecutive(new int[]{0,3,7,2,5,8,4,6,0,1}));
     }
     public int sumSubarrayMins(int[] A) {
         int MOD = 1_000_000_007;
@@ -30,6 +31,22 @@ class SumSubArraymins {
         }
 
         return ans;
+    }
+    public int longestConsecutive(int[] nums) {
+
+        Arrays.sort(nums);
+        int seq =1;
+        int max = 0;
+        for(int i =1;i<nums.length;i++){
+            if(nums[i-1]==nums[i] || nums[i-1]==nums[i]-1){
+                seq++;
+            }else{
+                max = Math.max(max, seq);
+                seq =1;
+            }
+        }
+        return Math.max(max, seq);
+
     }
 }
 
