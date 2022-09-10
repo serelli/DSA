@@ -2,7 +2,7 @@ package com.algo.sortingexamples;
 
 import java.util.*;
 
-class Solution {
+class MergeIntervals {
     public int[][] merge(int[][] intervals) {
 
         if(intervals.length <= 1)
@@ -33,7 +33,7 @@ class Solution {
     }
 
     public static void main(String[] args){
-        Solution solution = new Solution();
+        MergeIntervals solution = new MergeIntervals();
         int[][] merge = solution.merge(new int[][]{{8, 10}, {1, 3}, {15, 18}, {2, 6}});
         for (int[] arr: merge
         ) {
